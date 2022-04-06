@@ -61,12 +61,12 @@ const Placeholder: React.FC = () => {
   return (
     <Container>
       <ImageWrapper>
-        <Skeleton width={320} height={220} />
+        {/* <Skeleton width={320} height={220} /> */}
       </ImageWrapper>
       <Info>
-        <Skeleton width={150} height={29} rounded />;
+        {/* <Skeleton width={150} height={29} rounded />; */}
         <div style={{height: '8px'}} />
-        <Skeleton width={200} height={19} rounded />
+        {/* <Skeleton width={200} height={19} rounded /> */}
       </Info>
     </Container>
   )
@@ -75,18 +75,16 @@ const Placeholder: React.FC = () => {
 function App() {
   const [loading, setLoading] = useState<Boolean>(true);
 
-  useEffect(()=>{
-    setTimeout(()=> setLoading(false), 2000)
-  }, [])
+  // useEffect(()=>{
+  //   setTimeout(()=> setLoading(false), 2000)
+  // }, [])
 
   return (
     <div className="App">
       <Base>
       {
-        loading ? Array.from({length:25}).map((_, idx) => {
-          <Placeholder />}) : Array.from({length:25}).map((_)=>{
-            <Item />
-          })
+        loading ? Array.from({length:10}).map((_, idx) => <Placeholder key={idx} />) 
+          : Array.from({length:25}).map((_)=> <Item />)
         }
       </Base>
     </div>

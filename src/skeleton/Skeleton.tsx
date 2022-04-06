@@ -56,7 +56,7 @@ const Skeleton:React.FC<Props> = ({
     color= '#f4f4f4',
     style,
 }) => {
-    const content = useMemo(()=>[...Array.from({length:count}).map(()=>'-').join('')],[count]);
+    const content = useMemo(()=>[...Array.from({length:count!}).map(()=>'-').join('')],[count]);
     return (
         <Base>
             <Content>{content}</Content>
